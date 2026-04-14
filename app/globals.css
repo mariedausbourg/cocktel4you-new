@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 8%;
+    --primary: 287 51% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 128 23% 41%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 287 51% 96%;
+    --accent-foreground: 287 51% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 287 51% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 6%;
+    --foreground: 0 0% 96%;
+    --card: 240 10% 9%;
+    --card-foreground: 0 0% 96%;
+    --popover: 240 10% 9%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 287 51% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 128 23% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 8% 14%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 287 30% 16%;
+    --accent-foreground: 287 51% 80%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 16%;
+    --input: 240 6% 16%;
+    --ring: 287 51% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  .gradient-violet {
+    background: linear-gradient(135deg, #8F3CB0 0%, #6a2d85 100%);
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, #568548 0%, #3d6234 100%);
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, #8F3CB0 0%, #568548 100%);
+  }
+
+  .text-gradient-violet {
+    background: linear-gradient(135deg, #8F3CB0, #c06de0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #8F3CB0, #568548);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(143, 60, 176, 0.15);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8F3CB0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #73308d;
+}
