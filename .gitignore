@@ -29,6 +29,7 @@ dev-server.out.log
 # local env files
 .env
 .env*.local
+.vscode/mcp.json
 
 # vercel
 .vercel
